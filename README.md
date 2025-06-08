@@ -1,79 +1,162 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19730253&assignment_repo_type=AssignmentRepo)
-# MERN Stack Integration Assignment
+# MERN Stack Blog Application
 
-This assignment focuses on building a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application that demonstrates seamless integration between front-end and back-end components.
+> Week 4: Deep Dive into MERN Stack Integration Assignment
 
-## Assignment Overview
+This is a full-stack **MERN (MongoDB, Express.js, React.js, Node.js)** blog application built as part of the Week 4 assignment. It demonstrates seamless integration between the front-end and back-end components, covering API communication, CRUD operations, and state management.
 
-You will build a blog application with the following features:
-1. RESTful API with Express.js and MongoDB
-2. React front-end with component architecture
-3. Full CRUD functionality for blog posts
-4. User authentication and authorization
-5. Advanced features like image uploads and comments
+---
 
-## Project Structure
+## 🚀 Project Overview
 
-```
-mern-blog/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # Reusable components
-│   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── services/       # API services
-│   │   ├── context/        # React context providers
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Express.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Route controllers
-│   ├── models/             # Mongoose models
-│   ├── routes/             # API routes
-│   ├── middleware/         # Custom middleware
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
-```
+The blog application allows users to:
 
-## Getting Started
+- View a list of blog posts
+- View a single post in detail
+- Create new posts
+- Edit or delete existing posts
+- Categorize posts using MongoDB-backed categories
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week4-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+The app demonstrates clean separation between client and server code, RESTful API design, and dynamic front-end rendering with React.
 
-## Files Included
+---
 
-- `Week4-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Configuration files
-  - Sample models and components
+## 🧠 Features Implemented
 
-## Requirements
+### ✅ Core Features
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
+- Full CRUD operations for blog posts
+- Category management
+- RESTful API with Express and MongoDB
+- Mongoose models for Posts and Categories
+- Form validation
+- React Router for navigation
+- API services using custom hooks
+- Loading and error handling UI
+
+### 🌟 Advanced Features
+
+- Optimistic UI updates
+- Image support for posts (can be extended)
+- Dynamic dropdowns for category selection
+- API error handling middleware
+
+---
+
+## 🛠️ Setup Instructions
+
+### ⚙️ Prerequisites
+
+- Node.js v18+
+- MongoDB (local or Atlas)
 - npm or yarn
 - Git
 
-## Submission
+### 📁 Clone and Install
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+```bash
+# Clone the repo
+git clone https://github.com/YOUR-USERNAME/mern-blog.git
+cd mern-blog
 
-1. Complete both the client and server portions of the application
-2. Implement all required API endpoints
-3. Create the necessary React components and hooks
-4. Document your API and setup process in the README.md
-5. Include screenshots of your working application
+🔧 Server Setup
+cd server
+cp .env.example .env    # Configure Mongo URI and PORT
 
-## Resources
+npm install
+node seedCategories.js  # Seeds predefined categories
+npm run dev             # Starts backend at http://localhost:5000
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [Mongoose Documentation](https://mongoosejs.com/docs/) 
+💻 Client Setup
+
+cd ../client
+cp .env.example .env    # VITE_API_BASE_URL should point to backend
+
+npm install
+npm run dev             # Starts frontend at http://localhost:3000
+
+📡 API Documentation
+🔹 Blog Post Endpoints
+
+| Method | Endpoint         | Description              |
+| ------ | ---------------- | ------------------------ |
+| GET    | `/api/posts`     | Get all blog posts       |
+| GET    | `/api/posts/:id` | Get a specific blog post |
+| POST   | `/api/posts`     | Create a new blog post   |
+| PUT    | `/api/posts/:id` | Update a blog post       |
+| DELETE | `/api/posts/:id` | Delete a blog post       |
+
+
+🔹 Category Endpoints
+| Method | Endpoint          | Description           |
+| ------ | ----------------- | --------------------- |
+| GET    | `/api/categories` | Get all categories    |
+| POST   | `/api/categories` | Create a new category |
+
+
+🗂️ Directory Structure
+mern-blog/
+├── client/                 # React front-end (Vite)
+│   ├── src/
+│   │   ├── components/     # UI Components
+│   │   ├── pages/          # Page views
+│   │   ├── services/       # API communication
+│   │   └── App.jsx
+│   ├── public/
+│   └── .env.example        # Client env config
+├── server/                 # Node + Express backend
+│   ├── config/             # MongoDB config
+│   ├── controllers/        # Route logic
+│   ├── middleware/         # Error handlers
+│   ├── models/             # Mongoose schemas
+│   ├── routes/             # API routes
+│   ├── seedCategories.js   # Category seeder
+│   └── .env.example        # Server env config
+└── README.md               # Assignment documentation
+
+
+## 🧪 Screenshots
+
+### 🏠 Home Page  
+Displays a list of all available blog posts.
+
+![Home Page](./home.png)
+
+---
+
+### ➕ Create New Post  
+Users can add a new blog post with a title, description, and category selection.
+
+![Create New Post](./create.png)
+
+---
+
+### 📄 Single Post View  
+Shows the full details of a single selected post.
+
+![Single Post View](./individualevent.png)
+
+
+
+📋 .env Configuration
+server/.env.example
+
+MONGO_URI=mongodb://localhost:27017/mern-blog
+PORT=5000
+
+client/.env.example
+
+VITE_API_BASE_URL=http://localhost:5000/api
+
+📚 Resources Used
+MongoDB
+
+Express.js
+
+React
+
+Node.js
+
+Mongoose
+
+🔚 Developed as part of MERN Integration Assignment – Week 4.
+
