@@ -53,7 +53,6 @@ The app demonstrates clean separation between client and server code, RESTful AP
 
 ### 📁 Clone and Install
 
-```bash
 # Clone the repo
 git clone https://github.com/YOUR-USERNAME/mern-blog.git
 cd mern-blog
