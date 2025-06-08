@@ -125,7 +125,7 @@ Displays a list of all available blog posts.
 ### ➕ Create New Post  
 Users can add a new blog post with a title, description, and category selection.
 
-![Create New Post](create.png)
+![Create New Post](Create.png)
 
 ---
 
