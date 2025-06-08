@@ -119,21 +119,21 @@ mern-blog/
 ### 🏠 Home Page  
 Displays a list of all available blog posts.
 
-![Home Page](./home.png)
+![Home Page](home.png)
 
 ---
 
 ### ➕ Create New Post  
 Users can add a new blog post with a title, description, and category selection.
 
-![Create New Post](./create.png)
+![Create New Post](create.png)
 
 ---
 
 ### 📄 Single Post View  
 Shows the full details of a single selected post.
 
-![Single Post View](./individualevent.png)
+![Single Post View](individualevent.png)
 
 
 
